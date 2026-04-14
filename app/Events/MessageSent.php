@@ -42,7 +42,7 @@ class MessageSent implements ShouldBroadcast
             $this->message['receiver_id']
         ];
 
-        //sort ids so the channel name always stays the same between the tow users
+        //sort ids so the channel name always stays the same between the two users
         sort($ids);
         
         return [
