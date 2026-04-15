@@ -47,7 +47,7 @@ class MessageSent implements ShouldBroadcast
         sort($ids);
         
         return [
-            new PrivateChannel('channel.'.$ids[0].'.'.$ids[1]),
+            new PrivateChannel('chat.'.$ids[0].'.'.$ids[1]),
         ];
     }
 
