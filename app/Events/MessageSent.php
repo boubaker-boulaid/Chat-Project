@@ -24,6 +24,7 @@ class MessageSent implements ShouldBroadcast
             'id' => $message->id,
             'content' => $message->content,
             'sender_id' => $message->sender_id,
+            'sender_name' => $message->sender->name,
             'receiver_id' => $message->receiver_id,
             'receiver_name' => $message->receiver->name,
             'created_at' => $message->created_at->toDateTimeString()
