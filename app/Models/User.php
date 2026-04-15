@@ -34,7 +34,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function password($value):Attribute 
+    public function password():Attribute 
     {
         return Attribute::make(
             set:fn ($value) => Hash::make($value),
