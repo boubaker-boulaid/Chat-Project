@@ -13,6 +13,8 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <link rel="icon" href="{{ asset('images/chat_app_logo_white_bg_1776267805583.png') }}" type="image/x-icon">
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
