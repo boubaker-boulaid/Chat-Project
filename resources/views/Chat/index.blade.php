@@ -20,7 +20,7 @@
                                     <tr>
                                         <th>{{ $user->name }}</th>
                                         <th>
-                                            <a href="{{ route('') }}" class="text-blue-500">chat</a>
+                                            <a href="{{ route('chat.show', $user->id) }}" class="text-blue-500">chat</a>
                                         </th>
                                     </tr>
                                 @endforeach                                
