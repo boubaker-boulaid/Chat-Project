@@ -3,12 +3,16 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 
 #[Fillable(['name', 'email', 'password'])]
 #[Hidden(['password', 'remember_token'])]
@@ -30,12 +34,19 @@ class User extends Authenticatable
         ];
     }
 
-    public function sentMessages()
+    public function password():Attribute 
+    {
+        return Attribute::make(
+            set:fn ($value) => Hash::make($value),
+        );
+    }
+
+    public function sentMessages():HasMany
     {
         return $this->hasMany(Message::class, 'sender_id');
     }
 
-    public function receivedMessages()
+    public function receivedMessages():HasMany
     {
         return $this->hasMany(Message::class, 'receiver_id');
     }
