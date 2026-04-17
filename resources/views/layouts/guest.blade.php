@@ -12,6 +12,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         <link rel="icon" href="{{ asset('images/chat_app_logo_white_bg_1776267805583.png') }}" type="image/x-icon">
